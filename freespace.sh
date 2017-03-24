@@ -1,4 +1,5 @@
 #!/bin/bash
+#*************** The script will calculate the size & number of physical disk on the server ***************
 echo -e "\e[1;93m********* HOSTNAME:- $HOSTNAME **********\e[0m"
 y=0
 z=0

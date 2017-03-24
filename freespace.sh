@@ -38,4 +38,3 @@ echo "=============="
 echo -e "\e[1;93mTotal Disks Size is:- $y GB\e[0m"	
 
 
-

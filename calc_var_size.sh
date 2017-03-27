@@ -4,7 +4,7 @@ read temp
 echo -e "\e[1;38m\t\t********* Value entered is "\"$temp"\" *********\e[0m"
 regex="^([A-Z\s a-z\s]+)$"
 regex1="^([0-9]+)$"
-regex2="^([A-Za-z0-9]+)$"
+regex2="^([A-Za-z\s 0-9\s]+)$"
 
 if [[ "$temp" =~ $regex ]] 
 then

@@ -72,12 +72,33 @@ l=0
 	echo -e "\e[1;38mWhitespaces:- $w\e[0m"
 	char=`echo $char \* 4 | bc`
 	d=`echo $d \* 2 | bc`
-	#echo -e "\e[1;38mSize of digits "\"$digit"\" is \e[1;93m$k \e[0m \e[1;38mbytes & Size of characters "\"$char"\" is \e[1;93m$m \e[0m \e[1;38mbytes\e[0m"
 	echo -e "\e[1;38mSize of characters "\"$m"\" is \e[1;93m$char \e[0m\e[1;38mbytes, Size of digits "\"$digit"\" is \e[1;93m$d \e[0m\e[1;38mbytes Size of Whitespace is \e[1;93m$w\e[0m \e[1;38mbytes\e[0m"
 	k=`echo $char \+ $d \+ $w  | bc`
 	echo -e "\e[1;93\tm===== Total size of variable holding alphanumeric value "\"$temp"\" is $k bytes =====\e[0m"
-	else
-	echo "no whitespace"
+else
+	echo -e "\e[1;93m\t\t====== "Its an alphanumeric value set" ======\e[0m"
+        echo -e "\e[1;93m\tSize of an Integer:- 2 byte    Size of a Character:- 4 byte\e[0m"
+        echo -e "\e[1;38mCalculation:-\e[0m"
+        echo -e "\e[1;38m=============\e[0m"
+        k=`echo -n "$temp" | wc -c`
+        echo -e "\e[1;38mTotal length of string is $k\e[0m"
+        digit=$(grep -o "[0-9]" <<<"$temp")
+        d=`echo $digit | wc -m`
+        d=$((d / 2))
+        echo -e "\e[1;38mDigits:- $d\e[0m"
+        char=$(grep -o "[A-Za-z]" <<<"$temp")
+        m=$char
+        char=`echo $char | wc -c`
+        char=$((char / 2))
+        echo -e "\e[1;38mChar:- $char\e[0m"
+        #w=`echo $char \+ $d | bc`
+        #w=`echo $k \- $w | bc`
+        #echo -e "\e[1;38mWhitespaces:- $w\e[0m"
+        char=`echo $char \* 4 | bc`
+        d=`echo $d \* 2 | bc`
+        echo -e "\e[1;38mSize of characters "\"$m"\" is \e[1;93m$char \e[0m\e[1;38mbytes, Size of digits "\"$digit"\" is \e[1;93m$d \e[0m\e[1;38mbytes\e[0m"
+        k=`echo $char \+ $d | bc`
+        echo -e "\e[1;93\tm===== Total size of variable holding alphanumeric value "\"$temp"\" is $k bytes =====\e[0m"
 	fi
 	
 else

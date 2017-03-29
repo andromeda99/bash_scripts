@@ -37,12 +37,10 @@ then
 	fi
 elif [[ "$temp" =~ $regex1 ]]
 then
-	echo "Integers have a whitespace in between. Please enter digits w/o a whitespace"
-	break
 	k=`echo -n "$temp" | wc -c`
 	echo -e "\e[1;38m"\"$temp"\" is a $k digit integer. Each interger holds 2 byte of memory.\e[0m"
 	k=`echo $k \* 2 | bc`
-	echo -e "\e[1;93m\t\t====== Size of "\"$temp"\" is $k bytes ======\e[0m"
+	echo -e "\e[1;93m\t====== Size of a variable holding value "\"$temp"\" is $k bytes ======\e[0m"
 elif [[ "$temp" =~ $regex2 ]]
 then
 d=0

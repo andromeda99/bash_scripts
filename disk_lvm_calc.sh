@@ -233,7 +233,7 @@ done
 echo -e "\e[1;38mTotal Size of $lv Logical Volume(LVS):- $Tlvs GB\e[0m"
 echo -e "\e[1;93mPlease follow below LVS mount points with its sizes\e[0m"
 echo -e "\e[1;38mName\t\t    type      Size  Used Avail Use% Mounted\e[0m"
-df -HT | grep vg
+df -HT | grep mapper
 #=========================
 Tdsk=`echo $dsk \- $x | bc`
 echo -e "\e[1;93m*** Free & Available space on the disk is $Tdsk ***\e[0m"

@@ -3,13 +3,13 @@
 z=0
 flag=0
 echo "Please enter any String with space:- "
-read foo
-echo "The string entered is "\"$foo"\""
+read temp
+echo "The string entered is "\"$temp"\""
 echo "Detecting whitespace..."
 #foo="                string "
-for (( i=0; i<${#foo}; i++ )); do
-#	echo "${foo:$i:1}"
-if [[ "${foo:$i:1}" =~ " " ]]
+for (( i=0; i<${#temp}; i++ )); do
+	echo "${temp:$i:1}"
+if [[ "${temp:$i:1}" =~ " " ]]
 then
 	flag=1
 	i=`echo $i \+ 1 | bc`
@@ -24,7 +24,7 @@ fi
 done
 if [ "$flag" == 1 ]
 then
-echo "There are total $z whitespaces in "\"$foo"\""
+echo "There are total $z whitespaces in "\"$temp"\""
 else
-echo "There are no whitespaces in "\"$foo"\""
+echo "There are no whitespaces in "\"$temp"\""
 fi

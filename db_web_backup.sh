@@ -19,7 +19,7 @@ if [ -d "/Mysql_backup/$f/" ]; then
 else
 	echo "Destination folder $area51$f does not exist. Creating..."
 	sleep 1;
-	mkdir $area51$f
+	mkdir -p $area51$f
 	echo "$area51$f Created..." 
 	mysqldump -uroot -psupp0rt $db > $area51$db$x.sql
 	y=`echo $?`
